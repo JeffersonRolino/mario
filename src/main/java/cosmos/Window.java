@@ -3,8 +3,7 @@ package cosmos;
 import org.lwjgl.Version;
 import org.lwjgl.glfw.GLFWErrorCallback;
 import org.lwjgl.opengl.GL;
-
-import java.util.Objects;
+import util.Time;
 
 import static org.lwjgl.glfw.Callbacks.glfwFreeCallbacks;
 import static org.lwjgl.glfw.GLFW.*;
@@ -16,13 +15,35 @@ public class Window {
     private final int height;
     private final String title;
     private long glfwWindow;
+    public float r, g, b, a;
 
     private static Window window = null;
+
+    private static Scene currenScene = null;
 
     private Window(){
         this.width = 1920;
         this.height = 1080;
         this.title = "Mario";
+        this.r = 1.0f;
+        this.g = 1.0f;
+        this.b = 1.0f;
+        this.a = 1.0f;
+
+    }
+
+    public static void changeScene(int newScene){
+        switch (newScene){
+            case 0:
+                currenScene = new LevelEditorScene();
+                break;
+            case 1:
+                currenScene = new LevelScene();
+                break;
+            default:
+                assert false : "Unknown scene " + newScene;
+                break;
+        }
     }
 
     public static Window get(){
@@ -45,7 +66,7 @@ public class Window {
 
         // Terminate GLFW and free error callback
         glfwTerminate();
-        Objects.requireNonNull(glfwSetErrorCallback(null)).free();
+        glfwSetErrorCallback(null).free();
     }
 
     public void init(){
@@ -87,22 +108,31 @@ public class Window {
         // creates the GLCapabilities instance and makes the OpenGL
         // bindings available for use.
         GL.createCapabilities();
+
+        Window.changeScene(0);
     }
 
     public void loop(){
+        float beginTime = Time.getTime();
+        float endTime;
+        float dt = -1.0f;
+
         while(!glfwWindowShouldClose(glfwWindow)){
             // Poll events
             glfwPollEvents();
 
-            glClearColor(1.0f, 0.0f, 0.0f, 1.0f);
+            glClearColor(r, g, b, a);
             glClear(GL_COLOR_BUFFER_BIT);
 
-            if(KeyListener.isKeyPressed(GLFW_KEY_SPACE)){
-                System.out.println("Space key is pressed...");
-                System.out.println("Mouse x: " + MouseListener.getX() + " Mouse y: " + MouseListener.getY());
+            if(dt >= 0){
+                currenScene.update(dt);
             }
 
             glfwSwapBuffers(glfwWindow);
+
+            endTime = Time.getTime();
+            dt = endTime - beginTime;
+            beginTime = endTime;
         }
     }
 }
