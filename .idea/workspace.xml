@@ -5,11 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b8bde807-460b-4d53-87a4-97b2e9bb82ff" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/cosmos/LevelEditorScene.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cosmos/LevelScene.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cosmos/Scene.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/util/Time.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/shaders/default.glsl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cosmos/LevelEditorScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cosmos/LevelEditorScene.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cosmos/Scene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cosmos/Scene.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/cosmos/Window.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cosmos/Window.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -49,9 +49,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 5
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
   <component name="ProjectId" id="2jpkuWC3lFNvszVM7X7FR78sb7R" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -65,7 +65,8 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true"
+    "kotlin-language-version-configured": "true",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />

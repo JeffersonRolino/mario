@@ -29,16 +29,17 @@ public class Window {
         this.g = 1.0f;
         this.b = 1.0f;
         this.a = 1.0f;
-
     }
 
     public static void changeScene(int newScene){
         switch (newScene){
             case 0:
                 currenScene = new LevelEditorScene();
+                currenScene.init();
                 break;
             case 1:
                 currenScene = new LevelScene();
+                currenScene.init();
                 break;
             default:
                 assert false : "Unknown scene " + newScene;
